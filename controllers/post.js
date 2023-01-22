@@ -80,7 +80,7 @@ exports.createPost = (req, res, next) => {
         console.log(files.photo.type)
         if (files.photo) {
             post.photo.data = fs.readFileSync(files.photo.path);
-            post.photo.contentType = files.photo.type;
+            post.photo.contentType = "image/jpeg";
         }
         post.save((err, result) => {
             if (err) {
@@ -155,7 +155,7 @@ exports.updatePost = (req, res, next) => {
 
         if (files.photo) {
             post.photo.data = fs.readFileSync(files.photo.path);
-            post.photo.contentType = files.photo.type;
+            post.photo.contentType = "image/jpeg";
         }
 
         post.save((err, result) => {
