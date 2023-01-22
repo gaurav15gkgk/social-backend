@@ -77,7 +77,7 @@ exports.createPost = (req, res, next) => {
         req.profile.hashed_password = undefined;
         req.profile.salt = undefined;
         post.postedBy = req.profile;
-
+        console.log(files.photo.type)
         if (files.photo) {
             post.photo.data = fs.readFileSync(files.photo.path);
             post.photo.contentType = files.photo.type;
