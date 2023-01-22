@@ -184,6 +184,7 @@ exports.deletePost = (req, res) => {
 };
 
 exports.photo = (req, res, next) => {
+    console.log(req.post.photo.contentType)
     res.set('Content-Type', req.post.photo.contentType);
     return res.send(req.post.photo.data);
 };
